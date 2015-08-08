@@ -1,6 +1,14 @@
 class Captcha:
 	number_map = {
-		'1': 'ONE'
+		'1': 'ONE',
+		'2': 'TWO',
+		'3': 'THREE',
+		'4': 'FOUR',
+		'5': 'FIVE',
+		'6': 'SIX',
+		'7': 'SEVEN',
+		'8': 'EIGHT',
+		'9': 'NINE',
 	}
 	def __init__(self, captcha_type, left, oprator, right):
 		self.captcha_type = captcha_type

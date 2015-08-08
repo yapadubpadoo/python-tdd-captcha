@@ -3,8 +3,6 @@ from captcha import Captcha
 
 
 class TestFirstPatternLeftOperand(unittest.TestCase):
-	def setUp(self):
-		self.captcha = Captcha(1,1,1,1)
 
 	def test_1_should_be_1(self):
 		captcha = Captcha(1,1,1,1)
@@ -20,17 +18,39 @@ class TestFirstPatternLeftOperand(unittest.TestCase):
 
 
 class TestSecondPatternLeftOperand(unittest.TestCase):
-	def setUp(self):
-		self.captcha = Captcha(1,1,1,1)
 
 	def test_1_should_be_ONE(self):
-		captcha = Captcha(2,1,1,1)
+		first_pattern = 2
+		focus = 1
+		dummy_operator = 1
+		dummy_right = 1
+		captcha = Captcha(first_pattern, focus, dummy_operator, dummy_right)
 		self.assertEqual('ONE', captcha.getLeft())
 
-	# def test_2_should_be_TWO(self):
-	# 	captcha = Captcha(2,2,1,1)
-	# 	self.assertEqual('TWO', captcha.getLeft())
+	def test_2_should_be_TWO(self):
+		first_pattern = 2
+		focus = 2
+		dummy_operator = 1
+		dummy_right = 1
+		captcha = Captcha(first_pattern, focus, dummy_operator, dummy_right)
+		self.assertEqual('TWO', captcha.getLeft())
 
-	# def test_9_should_be_NINE(self):
-	# 	captcha = Captcha(2,9,1,1)
-	# 	self.assertEqual('NINE', captcha.getLeft())
+	def test_5_should_be_FIVE(self):
+		first_pattern = 2
+		focus = 5
+		dummy_operator = 1
+		dummy_right = 1
+		captcha = Captcha(first_pattern, focus, dummy_operator, dummy_right)
+		self.assertEqual('FIVE', captcha.getLeft())
+
+	def test_9_should_be_NINE(self):
+		first_pattern = 2
+		focus = 9
+		dummy_operator = 1
+		dummy_right = 1
+		captcha = Captcha(first_pattern, focus, dummy_operator, dummy_right)
+		self.assertEqual('NINE', captcha.getLeft())
+
+
+
+

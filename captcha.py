@@ -12,11 +12,13 @@ class Captcha:
 		else:
 			self.left = StringOperand(left)
 			self.right = IntegerOperand(right)
-
-		self.operator = str(operator)
+		self.operator = CaptchaOperator(operator)
 
 	def get_left(self):
 		return self.left.to_string()
 
 	def get_right(self):
 		return self.right.to_string()
+
+	def get_operator(self):
+		return self.operator.to_string()

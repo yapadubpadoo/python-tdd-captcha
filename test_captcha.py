@@ -92,20 +92,31 @@ class TestSecondPatternRightOperand(unittest.TestCase):
 		captcha = Captcha(pattern, dummy_left, dummy_operator, 7)
 		self.assertEqual('7', captcha.get_right())
 
+class TestCaptchaGetOperator(unittest.TestCase):
+	def test_1_should_return_ADD_operator(self):
+		captcha = Captcha(1,1,1,1)
+		self.assertEqual('+', captcha.get_operator())
+
+	def test_2_should_return_MULTIPLY_operator(self):
+		captcha = Captcha(1,1,2,1)
+		self.assertEqual('x', captcha.get_operator())
+
+	def test_3_should_return_MINUS_operator(self):
+		captcha = Captcha(1,1,3,1)
+		self.assertEqual('-', captcha.get_operator())
+
+
 class TestOperator(unittest.TestCase):
 	def test_1_should_return_ADD_operator(self):
-		focus = 1
-		operator = CaptchaOperator(operator_type = focus)
+		operator = CaptchaOperator(operator_type = 1)
 		self.assertEqual('+', operator.to_string())
 
 	def test_2_should_return_MULTIPLY_operator(self):
-		focus = 2
-		operator = CaptchaOperator(operator_type = focus)
+		operator = CaptchaOperator(operator_type = 2)
 		self.assertEqual('x', operator.to_string())
 
 	def test_3_should_return_MINUS_operator(self):
-		focus = 3
-		operator = CaptchaOperator(operator_type = focus)
+		operator = CaptchaOperator(operator_type = 3)
 		self.assertEqual('-', operator.to_string())
 
 
@@ -131,4 +142,6 @@ class TestIntegerOperand(unittest.TestCase):
 		string_operand = IntegerOperand(focus)
 		self.assertEqual('9', string_operand.to_string())
 	
+
+
 

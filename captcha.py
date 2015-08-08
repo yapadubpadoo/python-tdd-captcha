@@ -1,31 +1,22 @@
 from captcha_operator import CaptchaOperator
+from string_operand import StringOperand
+from integer_operand import IntegerOperand
+
 class Captcha:
-	number_map = {
-		'1': 'ONE',
-		'2': 'TWO',
-		'3': 'THREE',
-		'4': 'FOUR',
-		'5': 'FIVE',
-		'6': 'SIX',
-		'7': 'SEVEN',
-		'8': 'EIGHT',
-		'9': 'NINE',
-	}
+	
 
 	def __init__(self, captcha_type, left, operator, right):
-		self.captcha_type = captcha_type
-		self.left = str(left)
+		if captcha_type == 1:
+			self.left = IntegerOperand(left)
+			self.right = StringOperand(right)
+		else:
+			self.left = StringOperand(left)
+			self.right = IntegerOperand(right)
+
 		self.operator = str(operator)
-		self.right = str(right)
 
 	def get_left(self):
-		if(self.captcha_type == 2):
-			return self.number_map[self.left]
-		else:
-			return self.left
+		return self.left.to_string()
 
 	def get_right(self):
-		if(self.captcha_type == 2):
-			return self.number_map[self.right]
-		else:
-			return self.right
+		return self.right.to_string()

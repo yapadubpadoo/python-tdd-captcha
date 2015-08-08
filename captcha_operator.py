@@ -1,4 +1,4 @@
-class Operator:
+class CaptchaOperator:
 	operator_symbol = {
 		'1': '+',
 		'2': 'x',

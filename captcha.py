@@ -1,3 +1,4 @@
+from captcha_operator import CaptchaOperator
 class Captcha:
 	number_map = {
 		'1': 'ONE',

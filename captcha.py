@@ -10,6 +10,13 @@ class Captcha:
 		'8': 'EIGHT',
 		'9': 'NINE',
 	}
+
+	operator_symbol = {
+	'1': '+',
+	'2': 'x',
+	'3': '-'
+	}
+	
 	def __init__(self, captcha_type, left, operator, right):
 		self.captcha_type = captcha_type
 		self.left = str(left)
@@ -27,3 +34,6 @@ class Captcha:
 			return self.number_map[self.right]
 		else:
 			return self.right
+
+	def getOperator(self):
+		return self.operator_symbol[self.operator]

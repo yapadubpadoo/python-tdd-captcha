@@ -14,6 +14,6 @@ class CaptchaController:
 		left = self.captcha.get_left()
 		operator = self.captcha.get_operator()
 		right = self.captcha.get_right()
-		json = '{"left":"'+left+'", "operator":"'+operator+'", "right":"'+right+'"}'
+		json = '{"left":"%s", "operator":"%s", "right":"%s"}'  % (left, operator, right)
 		return json
 

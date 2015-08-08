@@ -10,14 +10,17 @@ class Captcha:
 		'8': 'EIGHT',
 		'9': 'NINE',
 	}
-	def __init__(self, captcha_type, left, oprator, right):
+	def __init__(self, captcha_type, left, operator, right):
 		self.captcha_type = captcha_type
 		self.left = str(left)
-		self.operator = str(left)
-		self.right = str(left)
+		self.operator = str(operator)
+		self.right = str(right)
 
 	def getLeft(self):
 		if(self.captcha_type == 2):
 			return self.number_map[self.left]
 		else:
 			return self.left
+
+	def getRight(self):
+		return self.right

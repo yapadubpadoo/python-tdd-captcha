@@ -1,5 +1,6 @@
 import unittest
 from captcha import Captcha
+from captcha import Operator
 
 
 class TestFirstPatternLeftOperand(unittest.TestCase):
@@ -94,27 +95,18 @@ class TestSecondPatternRightOperand(unittest.TestCase):
 
 class TestOperator(unittest.TestCase):
 	def test_1_should_return_ADD_operator(self):
-		pattern = 1
-		dummy_left = 1
 		focus = 1
-		dummy_right = 1
-		captcha = Captcha(pattern, dummy_right, focus, dummy_right)
-		self.assertEqual('+', captcha.getOperator())
+		oprator = Operator(operator_type = focus)
+		self.assertEqual('+', oprator.toString())
 
 	def test_2_should_return_MULTIPLY_operator(self):
-		pattern = 1
-		dummy_left = 1
 		focus = 2
-		dummy_right = 1
-		captcha = Captcha(pattern, dummy_right, focus, dummy_right)
-		self.assertEqual('x', captcha.getOperator())
+		oprator = Operator(operator_type = focus)
+		self.assertEqual('x', oprator.toString())
 
 	def test_3_should_return_MINUS_operator(self):
-		pattern = 1
-		dummy_left = 1
 		focus = 3
-		dummy_right = 1
-		captcha = Captcha(pattern, dummy_right, focus, dummy_right)
-		self.assertEqual('-', captcha.getOperator())
+		oprator = Operator(operator_type = focus)
+		self.assertEqual('-', oprator.toString())
 	
 

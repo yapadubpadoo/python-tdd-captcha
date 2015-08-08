@@ -2,7 +2,7 @@ from captcha import Captcha
 from randomizer import Randomizer
 
 class CaptchaController:
-	def __init__(self):
+	def get(self):
 		randomizer = Randomizer()
 		pattern = randomizer.get_pattern()
 		left = randomizer.get_number()
@@ -11,6 +11,7 @@ class CaptchaController:
 		self.captcha = Captcha(pattern, left, operator, right)
 
 	def to_json(self):
+		self.get()
 		left = self.captcha.get_left()
 		operator = self.captcha.get_operator()
 		right = self.captcha.get_right()

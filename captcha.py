@@ -18,13 +18,13 @@ class Captcha:
 		self.operator = str(operator)
 		self.right = str(right)
 
-	def getLeft(self):
+	def get_left(self):
 		if(self.captcha_type == 2):
 			return self.number_map[self.left]
 		else:
 			return self.left
 
-	def getRight(self):
+	def get_right(self):
 		if(self.captcha_type == 2):
 			return self.number_map[self.right]
 		else:

@@ -7,5 +7,5 @@ class CaptchaOperator:
 	def __init__(self, operator_type):
 		self.operator_type = str(operator_type)
 
-	def toString(self):
+	def to_string(self):
 		return self.operator_symbol[self.operator_type]

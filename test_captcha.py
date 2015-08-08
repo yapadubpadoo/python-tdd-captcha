@@ -1,6 +1,6 @@
 import unittest
 from captcha import Captcha
-from captcha import Operator
+from captcha_operator import Operator
 
 
 class TestFirstPatternLeftOperand(unittest.TestCase):

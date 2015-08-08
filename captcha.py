@@ -23,4 +23,7 @@ class Captcha:
 			return self.left
 
 	def getRight(self):
-		return self.right
+		if(self.captcha_type == 2):
+			return self.number_map[self.right]
+		else:
+			return self.right

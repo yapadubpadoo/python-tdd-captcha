@@ -101,5 +101,20 @@ class TestOperator(unittest.TestCase):
 		captcha = Captcha(pattern, dummy_right, focus, dummy_right)
 		self.assertEqual('+', captcha.getOperator())
 
+	def test_2_should_return_MULTIPLY_operator(self):
+		pattern = 1
+		dummy_left = 1
+		focus = 2
+		dummy_right = 1
+		captcha = Captcha(pattern, dummy_right, focus, dummy_right)
+		self.assertEqual('x', captcha.getOperator())
 
+	def test_3_should_return_MINUS_operator(self):
+		pattern = 1
+		dummy_left = 1
+		focus = 3
+		dummy_right = 1
+		captcha = Captcha(pattern, dummy_right, focus, dummy_right)
+		self.assertEqual('-', captcha.getOperator())
+	
 

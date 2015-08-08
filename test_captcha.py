@@ -19,14 +19,6 @@ class TestFirstPatternLeftOperand(unittest.TestCase):
 
 class TestSecondPatternLeftOperand(unittest.TestCase):
 
-	def test_1_should_be_ONE(self):
-		first_pattern = 2
-		focus = 1
-		dummy_operator = 1
-		dummy_right = 1
-		captcha = Captcha(first_pattern, focus, dummy_operator, dummy_right)
-		self.assertEqual('ONE', captcha.getLeft())
-
 	def test_2_should_be_TWO(self):
 		first_pattern = 2
 		focus = 2

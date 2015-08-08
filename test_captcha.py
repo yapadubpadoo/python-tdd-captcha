@@ -18,7 +18,6 @@ class TestFirstPatternLeftOperand(unittest.TestCase):
 
 
 class TestSecondPatternLeftOperand(unittest.TestCase):
-
 	def test_2_should_be_TWO(self):
 		pattern = 2
 		focus = 2
@@ -68,7 +67,30 @@ class TestFirstPatternRightOperand(unittest.TestCase):
 		captcha = Captcha(pattern, dummy_left, dummy_operator, focus)
 		self.assertEqual('9', captcha.getRight())
 
-# class TestSecondPatternRightOperand(unittest.TestCase):
+class TestSecondPatternRightOperand(unittest.TestCase):
+	def test_3_should_be_THREE(self):
+		pattern = 2
+		dummy_left = 2
+		dummy_operator = 1
+		focus = 3
+		captcha = Captcha(pattern, focus, dummy_operator, focus)
+		self.assertEqual('THREE', captcha.getLeft())
+
+	def test_6_should_be_SIX(self):
+		pattern = 2
+		dummy_left = 5
+		dummy_operator = 1
+		focus = 6
+		captcha = Captcha(pattern, focus, dummy_operator, focus)
+		self.assertEqual('SIX', captcha.getLeft())
+
+	def test_7_should_be_SEVEN(self):
+		pattern = 2
+		dummy_left = 9
+		dummy_operator = 1
+		focus = 7
+		captcha = Captcha(pattern, focus, dummy_operator, focus)
+		self.assertEqual('SEVEN', captcha.getLeft())
 
 
 
